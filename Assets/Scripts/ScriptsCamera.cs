@@ -59,20 +59,21 @@ public class ScriptsCamera : MonoBehaviour
 
     // --- 修正比例與旋轉 ---
     void CorrectDisplayAspect()
-    {
-        if (background == null || backCam.width <= 16) return;
+{
+    if (background == null || backCam.width <= 16) return;
 
-        float imageAspect = (float)backCam.width / backCam.height;
-        float containerAspect = 1080f / 1920f;
-        RectTransform rect = background.rectTransform;
+    float imageAspect = (float)backCam.width / backCam.height;
+    float containerAspect = (float)Screen.width / Screen.height;
+    RectTransform rect = background.rectTransform;
 
-        rect.localEulerAngles = new Vector3(0, 0, -backCam.videoRotationAngle);
+    rect.localEulerAngles = new Vector3(0, 0, -backCam.videoRotationAngle);
 
-        if (imageAspect > containerAspect)
-            rect.localScale = new Vector3(1, containerAspect / imageAspect, 1);
-        else
-            rect.localScale = new Vector3(imageAspect / containerAspect, 1, 1);
-    }
+    if (imageAspect > containerAspect)
+        rect.localScale = new Vector3(1, containerAspect / imageAspect, 1);
+    else
+        rect.localScale = new Vector3(imageAspect / containerAspect, 1, 1);
+}
+
 
     // --- 執行推論 ---
     void RunYolo(WebCamTexture webCam)

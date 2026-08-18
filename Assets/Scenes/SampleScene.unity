@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 2.9146006
+  m_AspectRatio: 0.4620853
 --- !u!114 &67702925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,7 +478,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 67702925}
-  fit: {fileID: 67702924}
+  modelAsset: {fileID: 5022602860645237092, guid: 034987f99bb70bf4f8ab29058b289f3e, type: 3}
+  targetDim: 640
+  confidenceThreshold: 0.5
+  nmsThreshold: 0.4
+  classNames:
+  - head
+  - syringe
 --- !u!1 &1583251922
 GameObject:
   m_ObjectHideFlags: 0
